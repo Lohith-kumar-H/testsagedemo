@@ -1,6 +1,7 @@
 
-package mID613.fID653;
-import pom.orenge;
+package mID627.fID665;
+import pom.testIfSc;
+import pom.dropPage;
 import java.io.File;
 import java.io.IOException;
 import java.util.Set;
@@ -19,7 +20,7 @@ import reuseablePackage.feature.CustomizedReport2;
 import reuseablePackage.feature.JavaMethods;
 import java.net.MalformedURLException;
 import java.lang.management.ManagementFactory;
-public class cookiesscr extends  AllActions {
+public class TestIf extends  AllActions {
 	AllActions actions=new AllActions();  
 	JavaMethods javamethod =  new JavaMethods();  
     String fileName=this.getClass().getSimpleName();    //common
@@ -42,10 +43,8 @@ public class cookiesscr extends  AllActions {
 	String vmName = ManagementFactory.getRuntimeMXBean().getName();
         int p = vmName.indexOf("@");
         String pid = vmName.substring(0, p);
-Set<Cookie> cooo;
-String ca;
-Date date1;
-int newss;
+boolean a=false;
+String b;
 	
 	@Test(priority=0)
 	public void step_0() throws Exception                                              //------------Method auto creation ------------//
@@ -106,7 +105,7 @@ int newss;
         {
         try
         {
-            cooo=actions.GetAllCookiesDetails();
+            a=actions.CheckObjectIsDisplayed(new testIfSc(driver).username1);
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
@@ -128,7 +127,12 @@ int newss;
         {
         try
         {
-            actions.AddCookies("hhhhh");
+            if(a){
+}//If-End
+else if(a){
+}//ElseIf-End
+else{
+}//Else-End
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
@@ -150,7 +154,7 @@ int newss;
         {
         try
         {
-            cooo=actions.GetAllCookiesDetails();
+            actions.SelectDropDownByValue(new dropPage(driver).item3,"Select an option by value <span  class="highlightText">Data1</span> from the dropdown <span  class="uiElement"> item3 </span>");
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
@@ -172,7 +176,7 @@ int newss;
         {
         try
         {
-            ca=actions.GetCookieName();
+            actions.EnterApplicationURL("ssdsdsdsdsdsdsd");
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
@@ -194,29 +198,7 @@ int newss;
         {
         try
         {
-            date1=actions.GetCookieExpiryDate();
-
-            String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
-        actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
-        
-            }
-        catch(Exception e)
-        {
-        String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();     
-        actions.CaptureOnFailure(path1,methodName,failScreenshotoption);
-        e.printStackTrace();
-        actions.CloseCurrentTab();
-        driver.get().quit();
-        throw e;
-        } 
-        };
-
-            @Test(priority=7)
-        public void step_7() throws Exception
-        {
-        try
-        {
-            newss=actions.GetSizeOfList(new orenge(driver).newlistttt);
+            actions.EnterData(new dropPage(driver).drop1i,"sd cf cvb");
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);

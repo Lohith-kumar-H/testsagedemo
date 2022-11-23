@@ -1,6 +1,7 @@
 
-package mID613.fID653;
-import pom.orenge;
+package mID627.fID665;
+import pom.demopage12;
+import reuseablePackage.reuseFunction.new2Class;
 import java.io.File;
 import java.io.IOException;
 import java.util.Set;
@@ -19,7 +20,7 @@ import reuseablePackage.feature.CustomizedReport2;
 import reuseablePackage.feature.JavaMethods;
 import java.net.MalformedURLException;
 import java.lang.management.ManagementFactory;
-public class cookiesscr extends  AllActions {
+public class DemoScr extends  AllActions {
 	AllActions actions=new AllActions();  
 	JavaMethods javamethod =  new JavaMethods();  
     String fileName=this.getClass().getSimpleName();    //common
@@ -42,10 +43,9 @@ public class cookiesscr extends  AllActions {
 	String vmName = ManagementFactory.getRuntimeMXBean().getName();
         int p = vmName.indexOf("@");
         String pid = vmName.substring(0, p);
-Set<Cookie> cooo;
-String ca;
-Date date1;
-int newss;
+String titlee="cccc";
+boolean raw=false;
+int i=0;
 	
 	@Test(priority=0)
 	public void step_0() throws Exception                                              //------------Method auto creation ------------//
@@ -106,7 +106,7 @@ int newss;
         {
         try
         {
-            cooo=actions.GetAllCookiesDetails();
+            raw=actions.CheckObjectIsDisplayed(new demopage12(driver).uname);
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
@@ -128,7 +128,7 @@ int newss;
         {
         try
         {
-            actions.AddCookies("hhhhh");
+            actions.EnterData(new demopage12(driver).uname,"tomsmith");
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
@@ -150,7 +150,7 @@ int newss;
         {
         try
         {
-            cooo=actions.GetAllCookiesDetails();
+            actions.EnterData(new demopage12(driver).password,"SuperSecretPassword!");
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
@@ -172,7 +172,7 @@ int newss;
         {
         try
         {
-            ca=actions.GetCookieName();
+            actions.Click(new demopage12(driver).loginbtn);
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
@@ -194,7 +194,7 @@ int newss;
         {
         try
         {
-            date1=actions.GetCookieExpiryDate();
+            titlee=actions.GetPageTitle();
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
@@ -216,7 +216,86 @@ int newss;
         {
         try
         {
-            newss=actions.GetSizeOfList(new orenge(driver).newlistttt);
+            if(raw){
+actions.Refresh();
+}//If-End
+else{
+actions.EnterApplicationURL("https://www.google.com/");
+actions.ThreadSleep("3000");
+}//Else-End
+
+            String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
+        actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
+        
+            }
+        catch(Exception e)
+        {
+        String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();     
+        actions.CaptureOnFailure(path1,methodName,failScreenshotoption);
+        e.printStackTrace();
+        actions.CloseCurrentTab();
+        driver.get().quit();
+        throw e;
+        } 
+        };
+
+            @Test(priority=8)
+        public void step_8() throws Exception
+        {
+        try
+        {
+            if(raw){
+actions.EnterApplicationURL("https://the-internet.herokuapp.com/login");
+}//If-End
+else{
+actions.Refresh();
+}//Else-End
+
+            String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
+        actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
+        
+            }
+        catch(Exception e)
+        {
+        String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();     
+        actions.CaptureOnFailure(path1,methodName,failScreenshotoption);
+        e.printStackTrace();
+        actions.CloseCurrentTab();
+        driver.get().quit();
+        throw e;
+        } 
+        };
+
+            @Test(priority=9)
+        public void step_9() throws Exception
+        {
+        try
+        {
+            for(i=0;i<3;i++){
+actions.Refresh();
+}//For-End
+
+            String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
+        actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
+        
+            }
+        catch(Exception e)
+        {
+        String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();     
+        actions.CaptureOnFailure(path1,methodName,failScreenshotoption);
+        e.printStackTrace();
+        actions.CloseCurrentTab();
+        driver.get().quit();
+        throw e;
+        } 
+        };
+
+            @Test(priority=10)
+        public void step_10() throws Exception
+        {
+        try
+        {
+            new new2Class(driver).new2();
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);

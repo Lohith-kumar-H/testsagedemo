@@ -1,6 +1,6 @@
 
-package mID613.fID653;
-import pom.orenge;
+package mID627.fID665;
+import pom.HerokuPage;
 import java.io.File;
 import java.io.IOException;
 import java.util.Set;
@@ -19,7 +19,7 @@ import reuseablePackage.feature.CustomizedReport2;
 import reuseablePackage.feature.JavaMethods;
 import java.net.MalformedURLException;
 import java.lang.management.ManagementFactory;
-public class cookiesscr extends  AllActions {
+public class Amazonn extends  AllActions {
 	AllActions actions=new AllActions();  
 	JavaMethods javamethod =  new JavaMethods();  
     String fileName=this.getClass().getSimpleName();    //common
@@ -42,10 +42,9 @@ public class cookiesscr extends  AllActions {
 	String vmName = ManagementFactory.getRuntimeMXBean().getName();
         int p = vmName.indexOf("@");
         String pid = vmName.substring(0, p);
-Set<Cookie> cooo;
-String ca;
-Date date1;
-int newss;
+String title;
+boolean test3=false;
+boolean test4=true;
 	
 	@Test(priority=0)
 	public void step_0() throws Exception                                              //------------Method auto creation ------------//
@@ -106,7 +105,7 @@ int newss;
         {
         try
         {
-            cooo=actions.GetAllCookiesDetails();
+            test3=actions.CheckObjectIsDisplayed(new HerokuPage(driver).username1);
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
@@ -128,7 +127,7 @@ int newss;
         {
         try
         {
-            actions.AddCookies("hhhhh");
+            actions.AssertEqualsForBoolean(test3,test4);
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
@@ -150,7 +149,7 @@ int newss;
         {
         try
         {
-            cooo=actions.GetAllCookiesDetails();
+            actions.EnterData(new HerokuPage(driver).username1,"username1Value");
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
@@ -172,7 +171,7 @@ int newss;
         {
         try
         {
-            ca=actions.GetCookieName();
+            actions.AssertNotEqualsForBoolean(test3,test4);
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
@@ -194,7 +193,7 @@ int newss;
         {
         try
         {
-            date1=actions.GetCookieExpiryDate();
+            actions.EnterData(new HerokuPage(driver).password2,"password2Value");
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
@@ -216,7 +215,29 @@ int newss;
         {
         try
         {
-            newss=actions.GetSizeOfList(new orenge(driver).newlistttt);
+            actions.Click(new HerokuPage(driver).buttonobj3);
+
+            String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
+        actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
+        
+            }
+        catch(Exception e)
+        {
+        String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();     
+        actions.CaptureOnFailure(path1,methodName,failScreenshotoption);
+        e.printStackTrace();
+        actions.CloseCurrentTab();
+        driver.get().quit();
+        throw e;
+        } 
+        };
+
+            @Test(priority=8)
+        public void step_8() throws Exception
+        {
+        try
+        {
+            title=actions.GetPageTitle();
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);

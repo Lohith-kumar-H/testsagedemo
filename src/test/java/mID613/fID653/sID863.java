@@ -2,7 +2,11 @@
 package mID613.fID653;
 import java.io.File;
 import java.io.IOException;
+import java.util.Set;
+import java.util.Date;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -121,7 +125,7 @@ boolean b=false;
         {
         try
         {
-            actions.ThreadSleep("3000");
+            actions.ThreadSleep("1000");
 
             String methodName=Thread.currentThread().getStackTrace()[1].getMethodName();
         actions.CaptureScreenShotAtEachStep(path,methodName,screenshotOption);
